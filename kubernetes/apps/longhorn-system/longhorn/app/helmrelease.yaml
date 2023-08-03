@@ -1,0 +1,51 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: &app longhorn
+  namespace: longhorn-system
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: longhorn
+      version: 1.5.1
+      sourceRef:
+        kind: HelmRepository
+        name: longhorn
+        namespace: flux-system
+  install:
+    createNamespace: true
+    remediation:
+      retries: 3
+  upgrade:
+    remediation:
+      retries: 3
+  values:
+    csi:
+      kubeletRootDir: /var/lib/kubelet
+    persistence:
+      defaultClass: true
+      defaultDataPath: /mnt/longhorn
+      defaultClassReplicaCount: 1
+      defaultFsType: ext4
+      reclaimPolicy: Delete
+    defaultSettings:
+      storageMinimalAvailablePercentage: 10
+      # backupTarget: nfs://${SVC_NAS_ADDR}:/volume1/backups/longhorn
+      # backupstorePollInterval: 1800
+      nodeDownPodDeletionPolicy: delete-both-statefulset-and-deployment-pod
+      defaultDataLocality: best-effort
+    ingress:
+      enabled: true
+      ingressClassName: internal
+      host: "longhorn.${SECRET_DOMAIN}"
+      tls: true
+      tlsSecret: "longhorn-tls"
+      path: /
+      annotations:
+        cert-manager.io/cluster-issuer: "letsencrypt-production"
+        nginx.ingress.kubernetes.io/whitelist-source-range: "10.0.0.0/8,172.16.0.0/12,192.168.0.0/16"
+        hajimari.io/enable: "true"
+        hajimari.io/icon: "cow"
+        hajimari.io/appName: "Longhorn"
