@@ -5,7 +5,7 @@ metadata:
   name: plex
   namespace: default
 spec:
-  interval: 15m
+  interval: 30m
   chart:
     spec:
       chart: app-template
@@ -14,9 +14,8 @@ spec:
         kind: HelmRepository
         name: bjw-s
         namespace: flux-system
-  maxHistory: 3
+  maxHistory: 2
   install:
-    createNamespace: true
     remediation:
       retries: 3
   upgrade:
@@ -32,23 +31,16 @@ spec:
     controller:
       type: statefulset
     image:
-      repository: ghcr.io/onedr0p/plex
-      tag: 1.32.5.7349-8f4248874@sha256:805ad80226d54f03c21efe84979558e7c3d0b07f345b9c929ff11de8cc216151
+      repository: ghcr.io/onedr0p/plex-beta
+      tag: 1.32.6.7371-b6a09ad81@sha256:437685fa85bee0731f36610b473b807aad436ca2408815018002206f9abf6fe6
       pullPolicy: IfNotPresent
     env:
       TZ: "${TIMEZONE}"
     service:
       main:
-        type: LoadBalancer
-        externalIPs: ["${SVC_PLEX_ADDR}"]
-        externalTrafficPolicy: Local
         ports:
           http:
             port: 32400
-    podSecurityContext:
-      runAsUser: 568
-      runAsGroup: 568
-      fsGroup: 568
     ingress:
       main:
         enabled: true
@@ -65,6 +57,10 @@ spec:
         tls:
           - hosts:
               - *host
+    podSecurityContext:
+      runAsUser: 568
+      runAsGroup: 568
+      fsGroup: 568
     volumeClaimTemplates:
       - name: config-plex
         mountPath: /config
