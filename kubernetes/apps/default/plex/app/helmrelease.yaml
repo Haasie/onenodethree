@@ -89,7 +89,6 @@ spec:
                   operator: In
                   values:
                     - "true"
-    resources:
 #    nodeSelector:
 #      intel.feature.node.kubernetes.io/gpu: "true"
 #      gputype: "power"
