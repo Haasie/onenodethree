@@ -80,6 +80,16 @@ spec:
       transcode:
         enabled: true
         type: emptyDir
+    affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+            - matchExpressions:
+                - key: feature.node.kubernetes.io/custom-intel-gpu
+                  operator: In
+                  values:
+                    - "true"
+    resources:
 #    nodeSelector:
 #      intel.feature.node.kubernetes.io/gpu: "true"
 #      gputype: "power"
@@ -96,7 +106,7 @@ spec:
       requests:
         gpu.intel.com/i915: 1
         cpu: 100m
-        memory: 2000Mi
+        memory: 1Gi
       limits:
         gpu.intel.com/i915: 1
-        memory: 10000Mi
+        memory: 6Gi
