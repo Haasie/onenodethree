@@ -30,8 +30,7 @@ metadata:
     app.kubernetes.io/instance: *app
   annotations:
     nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
-    hajimari.io/enable: "true"
-    hajimari.io/icon: "linux"
+    hajimari.io/icon: "mdi:linux"
 spec:
   ingressClassName: internal
   rules:

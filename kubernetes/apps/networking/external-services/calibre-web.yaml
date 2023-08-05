@@ -30,6 +30,7 @@ metadata:
     app.kubernetes.io/instance: *app
   annotations:
     external-dns.alpha.kubernetes.io/target: "external.${SECRET_DOMAIN}"
+    hajimari.io/icon: mdi:book
 spec:
   ingressClassName: external
   rules:
