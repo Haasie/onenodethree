@@ -44,7 +44,7 @@ spec:
           external-dns.alpha.kubernetes.io/target: "external.${SECRET_DOMAIN}"
           hajimari.io/icon: mdi:bookshelf
         hosts:
-          - host: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"
+          - host: &host "{{ boeken }}.${SECRET_DOMAIN}"
             paths:
               - path: /
                 pathType: Prefix
