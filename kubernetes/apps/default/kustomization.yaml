@@ -7,3 +7,4 @@ resources:
   - ./overseerr/ks.yaml
   - ./plex/ks.yaml
   - ./sonarr/ks.yaml
+  - /radarr/ks.yaml
