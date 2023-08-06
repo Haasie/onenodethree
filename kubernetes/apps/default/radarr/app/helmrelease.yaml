@@ -75,7 +75,7 @@ spec:
         annotations:
           hajimari.io/icon: "mdi:movie-edit"
         hosts:
-          - host: *host
+          - host: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"
             paths:
               - path: /
                 pathType: Prefix
