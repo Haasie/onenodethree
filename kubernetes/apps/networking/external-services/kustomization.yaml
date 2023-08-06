@@ -7,4 +7,4 @@ resources:
   - ./truenas.yaml
   - ./udm.yaml
 #  - ./notifiarr.yaml
-  - ./calibre-web.yaml
+#  - ./calibre-web.yaml
