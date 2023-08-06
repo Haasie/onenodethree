@@ -11,3 +11,4 @@ resources:
   - ./sabnzbd/ks.yaml
   - ./tautulli/ks.yaml
   - ./calibre/ks.yaml
+  - ./calibre-web/ks.yaml
