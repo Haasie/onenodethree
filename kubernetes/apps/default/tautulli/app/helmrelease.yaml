@@ -3,7 +3,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: sabnzbd
+  name: tautulli
   namespace: default
 spec:
   interval: 30m
@@ -32,44 +32,21 @@ spec:
     controller:
       type: statefulset
     image:
-      repository: ghcr.io/onedr0p/sabnzbd
-      tag: 4.0.3@sha256:aff676e3c234f7a4493c75813e296c347c02b6e5374acd1858f8244ea44f2b4a
+      repository: ghcr.io/onedr0p/tautulli
+      tag: 2.12.5@sha256:d0757cd22196df22e251b9be8db9e729493fb573a07d4d957b553c6676e64440
     env:
       TZ: "${TIMEZONE}"
-      SABNZBD__PORT: &port 80
-      SABNZBD__HOST_WHITELIST_ENTRIES: >-
-        sabnzbd,
-        sabnzbd.default,
-        sabnzbd.default.svc,
-        sabnzbd.default.svc.cluster,
-        sabnzbd.default.svc.cluster.local,
-        sabnzbd.${SECRET_DOMAIN}
     service:
       main:
         ports:
           http:
-            port: *port
-    probes:
-      liveness: &probes
-        enabled: true
-        custom: true
-        spec:
-          httpGet:
-            path: /api?mode=version
-            port: *port
-          initialDelaySeconds: 0
-          periodSeconds: 10
-          timeoutSeconds: 1
-          failureThreshold: 3
-      readiness: *probes
-      startup:
-        enabled: false
+            port: 8181
     ingress:
       main:
         enabled: true
         ingressClassName: internal
         annotations:
-          hajimari.io/icon: "mdi:download"
+          hajimari.io/icon: "mdi:movie-star"
         hosts:
           - host: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"
             paths:
@@ -82,28 +59,20 @@ spec:
       runAsUser: 568
       runAsGroup: 568
       fsGroup: 568
+      fsGroupChangePolicy: OnRootMismatch
+    persistence:
+      add-ons:
+        enabled: true
+        type: emptyDir
     volumeClaimTemplates:
       - name: config
         mountPath: /config
         accessMode: ReadWriteOnce
-        size: 1Gi
+        size: 5Gi
         storageClass: longhorn
-    persistence:
-      media:
-        enabled: true
-        type: nfs
-        server: "192.168.1.5"
-        path: /mnt/tank/media
-        mountPath: /media
-        readOnly: false
-      incomplete:
-        enabled: true
-        type: emptyDir
-    nodeSelector:
-      node-role.kubernetes.io/worker: "true"
     resources:
       requests:
         cpu: 10m
         memory: 250Mi
       limits:
-        memory: 8000Mi
+        memory: 500Mi
