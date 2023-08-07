@@ -66,6 +66,8 @@ spec:
           bookmarks:
             - name: Cloudflare
               url: "https://dash.cloudflare.com"
+            - name: Reader/Readwise
+              url: https://read.readwise.io
         - group: Kubernetes
           bookmarks:
             - name: Haasie/Onenodethree
@@ -82,6 +84,18 @@ spec:
           bookmarks:
             - name: Books
               url: https://z-lib.is/
+            - name: P2000
+              url: https://monitor.p2000alarm.nl/
+        - group: Artificial Intelligence
+          bookmarks:
+            - name: Bard
+              url: https://bard.google.com/
+            - name: Bard
+              url: https://bard.google.com/
+            - name: ChatGPT
+              url: https://chat.openai.com/
+            - name: FastGPT
+              url: https://labs.kagi.com/fastgpt
       searchProviders:
         - name: Kagi
           token: k
