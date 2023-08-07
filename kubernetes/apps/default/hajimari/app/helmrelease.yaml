@@ -40,6 +40,47 @@ spec:
         matchNames:
           - default
           - monitoring
+        customApps:
+        - name: NextDNS
+          url: "https://nextdns.com"
+          icon: dns
+        - name: Shodan
+          url: "https://www.shodan.io/dashboard"
+          icon: dns
+      globalBookmarks:
+        - group: Dev
+          bookmarks:
+            - name: GitHub
+              url: "https://github.com"
+            - name: CyberChef
+              url: "https://gchq.github.io/CyberChef"
+        - group: Cloud
+          bookmarks:
+            - name: Cloudflare
+              url: "https://dash.cloudflare.com"
+        - group: Kubernetes
+          bookmarks:
+            - name: Haasie/Onenodethree
+              url: "https://github.com/Haasie/onenodethree"
+            - name: k8s-at-home-search
+              url: "https://whazor.github.io/k8s-at-home-search/"
+        - group: Shopping
+          bookmarks:
+            - name: Gumtree
+              url: "https://www.gumtree.com/"
+
+            - name: "Amazon"
+              url: "https://amazon.nl/"
+        - group: Usefull
+          boomarks:
+            - name: Books
+              url: https://z-lib.is/
+      searchProviders:
+        - name: Kagi
+          token: k
+          icon: ci:search
+          searchUrl: https://kagi.com/search?q=query}
+          url: https://kagi.com/
     ingress:
       main:
         enabled: true
