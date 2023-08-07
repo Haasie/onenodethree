@@ -47,13 +47,13 @@ spec:
         - group: Home
           apps:
             - name: Home-Assistant
-              url: https://hass.${CLUSTER_DOMAIN}
+              url: https://homeassistant.${SECRET_DOMAIN}
               icon: mdi:home-assistant
             - name: Shodan
               url: "https://www.shodan.io/dashboard"
               icon: mdi:bug
             - name: NextDNS
-              url: "https://nextdns.com"
+              url: "https://my.nextdns.io"
               icon: mdi:dns
       globalBookmarks:
         - group: Dev
