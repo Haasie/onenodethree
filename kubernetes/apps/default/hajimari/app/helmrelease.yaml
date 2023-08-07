@@ -27,14 +27,16 @@ spec:
   values:
     hajimari:
       title: Apps
-      darkTheme: espresso
+      lightTheme: tron
+      darkTheme: tron
       alwaysTargetBlank: true
       showGreeting: false
       showAppGroups: false
-      showAppStatus: false
+      showAppStatus: true
       showBookmarkGroups: false
       showGlobalBookmarks: false
       showAppUrls: false
+      showAppInfo: true
       defaultEnable: true
       defaultSearchProvider: Kagi
       namespaceSelector:
