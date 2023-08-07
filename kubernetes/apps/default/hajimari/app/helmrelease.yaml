@@ -46,10 +46,10 @@ spec:
         customApps:
         - name: NextDNS
           url: "https://nextdns.com"
-          icon: dns
+          icon: mdi:dns
         - name: Shodan
           url: "https://www.shodan.io/dashboard"
-          icon: dns
+          icon: mdi:bug
       globalBookmarks:
         - group: Dev
           bookmarks:
