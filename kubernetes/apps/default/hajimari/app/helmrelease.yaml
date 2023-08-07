@@ -43,18 +43,16 @@ spec:
         matchNames:
           - default
           - monitoring
-        customApps:
-          - group: Services
-            apps:
-              - name: NextDNS
-                url: "https://nextdns.com"
-                icon: mdi:dns
-              - name: Shodan
-                url: "https://www.shodan.io/dashboard"
-                icon: mdi:bug
-              - name: Home-Assistant
-                url: "https://homeassistant.${SECRET_DOMAIN}"
-                icon: mdi:home-assistant
+      customApps:
+        - name: NextDNS
+          url: "https://nextdns.com"
+          icon: mdi:dns
+        - name: Shodan
+          url: "https://www.shodan.io/dashboard"
+          icon: mdi:bug
+        - name: Home-Assistant
+          url: "https://homeassistant.${SECRET_DOMAIN}"
+          icon: mdi:home-assistant
       globalBookmarks:
         - group: Dev
           bookmarks:
