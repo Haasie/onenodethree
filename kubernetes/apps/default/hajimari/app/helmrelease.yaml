@@ -71,11 +71,10 @@ spec:
           bookmarks:
             - name: Gumtree
               url: "https://www.gumtree.com/"
-
             - name: "Amazon"
               url: "https://amazon.nl/"
         - group: Usefull
-          boomarks:
+          bookmarks:
             - name: Books
               url: https://z-lib.is/
       searchProviders:
