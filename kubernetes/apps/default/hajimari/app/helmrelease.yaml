@@ -44,12 +44,12 @@ spec:
           - default
           - monitoring
         customApps:
-        - name: NextDNS
-          url: "https://nextdns.com"
-          icon: mdi:dns
-        - name: Shodan
-          url: "https://www.shodan.io/dashboard"
-          icon: mdi:bug
+          - name: NextDNS
+            url: "https://nextdns.com"
+            icon: mdi:dns
+          - name: Shodan
+            url: "https://www.shodan.io/dashboard"
+            icon: mdi:bug
       globalBookmarks:
         - group: Dev
           bookmarks:
