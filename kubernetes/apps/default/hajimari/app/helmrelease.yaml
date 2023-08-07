@@ -80,7 +80,7 @@ spec:
         - name: Kagi
           token: k
           icon: ci:search
-          searchUrl: https://kagi.com/search?q=query}
+          searchUrl: https://kagi.com/search?q=%s
           url: https://kagi.com/
     ingress:
       main:
