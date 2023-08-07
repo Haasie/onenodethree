@@ -34,8 +34,8 @@ spec:
       tag: version-v6.23.0
     env:
       TZ: "${TIMEZONE}"
-      PUID: "1000"
-      PGID: "65539"
+      PUID: "1026"
+      PGID: "1000"
     service:
       main:
         ports:
