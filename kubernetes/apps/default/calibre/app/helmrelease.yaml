@@ -29,6 +29,8 @@ spec:
     - name: longhorn
       namespace: longhorn-system
   values:
+    controller:
+      type: statefulset
     image:
       repository: ghcr.io/linuxserver/calibre
       tag: version-v6.23.0
@@ -80,7 +82,7 @@ spec:
         readOnly: false
     resources:
       requests:
-        cpu: 15m
+        cpu: 1000m
         memory: 324M
       limits:
-        memory: 604M
+        memory: 1Gi
