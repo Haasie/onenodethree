@@ -36,6 +36,7 @@ spec:
       showGlobalBookmarks: false
       showAppUrls: false
       defaultEnable: true
+      defaultSearchProvider: Kagi
       namespaceSelector:
         matchNames:
           - default
