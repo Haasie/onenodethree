@@ -90,8 +90,6 @@ spec:
           bookmarks:
             - name: Bard
               url: https://bard.google.com/
-            - name: Bard
-              url: https://bard.google.com/
             - name: ChatGPT
               url: https://chat.openai.com/
             - name: FastGPT
