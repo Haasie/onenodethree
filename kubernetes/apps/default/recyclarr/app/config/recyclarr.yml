@@ -85,6 +85,8 @@ radarr:
             score: 1
           - name: SD
             score: 1
+          - name: kids
+            score: 1
       - trash_ids:
           - 496f355514737f7d83bf7aa4d24f8169 # TrueHD Atmos
           - 2f22d89048b01681dde8afe203bf2e95 # DTS X
@@ -128,6 +130,7 @@ radarr:
         quality_profiles:
           - name: HD
           - name: SD
+          - name: kids
       - trash_ids:
           - 4b900e171accbfb172729b63323ea8ca # Optional: Multi
           - 923b6abef9b17f937fab56cfcf89e1f1 # Optional: DV (WEBDL) without fallback to HDR, set to manual score 0 or -10000
@@ -136,3 +139,4 @@ radarr:
             score: 0
           - name: SD
             score: 0
+          - name: kids
