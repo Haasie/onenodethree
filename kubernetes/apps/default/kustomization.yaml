@@ -14,3 +14,4 @@ resources:
   - ./calibre-web/ks.yaml
   - ./bazarr/ks.yaml
   - ./lidarr/ks.yaml
+  - ./readarr/ks.yaml
