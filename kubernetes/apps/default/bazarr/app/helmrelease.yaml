@@ -40,7 +40,7 @@ spec:
       main:
         ports:
           http:
-            port: 8787
+            port: &port 8787
     probes:
       liveness: &probes
         enabled: true
