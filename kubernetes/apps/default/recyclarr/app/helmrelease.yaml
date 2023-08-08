@@ -38,9 +38,7 @@ spec:
       TZ: ${TIMEZONE}
     envFrom:
       - secretRef:
-          name: radarr-secret
-      - secretRef:
-          name: sonarr-secret
+          name: recyclarr-secrets
     service:
       main:
         enabled: false
