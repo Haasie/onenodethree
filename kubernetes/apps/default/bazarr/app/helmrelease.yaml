@@ -36,14 +36,11 @@ spec:
       tag: 1.2.4@sha256:80fbe89f5806015d67aa78c60bf64c068998507d08db5ea05ac7b9916dabb880
     env:
       TZ: "${TIMEZONE}"
-      BAZARR__INSTANCE_NAME: bazarr
-      BAZARR__PORT: &port 80
-      BAZARR__LOG_LEVEL: info
     service:
       main:
         ports:
           http:
-            port: *port
+            port: 8787
     probes:
       liveness: &probes
         enabled: true
