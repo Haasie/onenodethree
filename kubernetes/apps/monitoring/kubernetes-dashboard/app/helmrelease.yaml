@@ -34,7 +34,7 @@ spec:
     app:
       ingress:
         enabled: true
-        className: internal
+        ingressClassName: internal
         annotations:
           hajimari.io/icon: mdi:kubernetes
         hosts:
@@ -42,7 +42,6 @@ spec:
         tls:
           - hosts:
               - *host
-            secretName: kubernetes-dashboard-tls
     metricsScraper:
       enabled: true
     serviceMonitor:
