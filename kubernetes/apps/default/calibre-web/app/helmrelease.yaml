@@ -26,6 +26,8 @@ spec:
   uninstall:
     keepHistory: false
   values:
+    controller:
+      type: statefulset
     image:
       repository: ghcr.io/auricom/calibre-web
       tag: 0.6.20
