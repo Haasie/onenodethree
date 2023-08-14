@@ -86,6 +86,8 @@ spec:
               url: https://z-lib.is/
             - name: P2000
               url: https://monitor.p2000alarm.nl/
+            - name: Cyber Threat Intelligence
+              url: "https://start.me/p/wMrA5z/cyber-threat-intelligence"
         - group: Artificial Intelligence
           bookmarks:
             - name: Bard
