@@ -96,6 +96,10 @@ spec:
               url: https://chat.openai.com/
             - name: FastGPT
               url: https://labs.kagi.com/fastgpt
+        - group: Socials etc.
+          bookmarks:
+            - name: Bookwyrm
+              url: "https://bookwyrm.social"
       searchProviders:
         - name: Kagi
           token: k
