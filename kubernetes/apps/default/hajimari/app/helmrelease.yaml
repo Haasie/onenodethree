@@ -88,7 +88,7 @@ spec:
               url: https://monitor.p2000alarm.nl/
             - name: Cyber Threat Intelligence
               url: "https://start.me/p/wMrA5z/cyber-threat-intelligence"
-            - name: Smoogle
+            - name: Shmoogle
               url: https://shmoogle.world/
         - group: Artificial Intelligence
           bookmarks:
