@@ -90,6 +90,8 @@ spec:
               url: "https://start.me/p/wMrA5z/cyber-threat-intelligence"
             - name: Shmoogle
               url: https://shmoogle.world/
+            - name: OSINT Resources
+              url: https://start.me/p/7kYgk2/rae-baker-deep-dive-osint
         - group: Artificial Intelligence
           bookmarks:
             - name: Bard
