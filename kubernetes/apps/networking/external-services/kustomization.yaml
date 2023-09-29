@@ -6,5 +6,6 @@ resources:
   - ./homeassistant.yaml
   - ./truenas.yaml
   - ./udm.yaml
+  - ./joplin.yaml
 #  - ./notifiarr.yaml
 #  - ./calibre-web.yaml

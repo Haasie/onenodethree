@@ -1,0 +1,50 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: &app joplin
+  namespace: networking
+  labels:
+    app.kubernetes.io/name: *app
+    app.kubernetes.io/instance: *app
+spec:
+  type: ExternalName
+  externalName: "192.168.1.5"
+  ports:
+    - name: http
+      port: &port 22300
+      protocol: TCP
+      targetPort: *port
+  dnsPolicy: "None"
+  dnsConfig:
+    nameservers:
+    - 169.254.20.10
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: &app joplin
+  namespace: networking
+  labels:
+    app.kubernetes.io/name: *app
+    app.kubernetes.io/instance: *app
+  annotations:
+    external-dns.alpha.kubernetes.io/target: "external.${SECRET_DOMAIN}"
+    hajimari.io/icon: mdi:home-assistant
+spec:
+  ingressClassName: external
+  rules:
+    - host: &host "joplin.${SECRET_DOMAIN}"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: *app
+                port:
+                  number: 22300
+  tls:
+    - hosts:
+        - *host
+      secretName: "joplin-tls"
