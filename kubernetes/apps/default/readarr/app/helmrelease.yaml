@@ -33,7 +33,7 @@ spec:
       type: statefulset
     image:
       repository: ghcr.io/onedr0p/readarr-nightly
-      tag: 0.3.14.2354@sha256:d591301259c0b05ecee7b5abddf33a6a333ef94807e412cef021ab66910e1459
+      tag: 0.3.15.2376@sha256:b4d2f0bfd9bdc32e88a99aa16816be8f6a6dd449a809fe8876df6e62d2ea4cdf
     env:
       TZ: "${TIMEZONE}"
       READARR__INSTANCE_NAME: Readarr
